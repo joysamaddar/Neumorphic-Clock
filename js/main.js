@@ -17,7 +17,11 @@ const digital = document.querySelector(".time");
       minimumIntegerDigits: 2,
     })}`;
     asec.style.transform = `rotate(${-90 + (360 / 60) * sec}deg)`;
-    amin.style.transform = `rotate(${-90 + (360 / 60) * min}deg)`;
-    ahour.style.transform = `rotate(${-90 + (360 / 12) * hour}deg)`;
+    amin.style.transform = `rotate(${
+      -90 + (360 / 60) * min + (360 / 60 / 60) * sec
+    }deg)`;
+    ahour.style.transform = `rotate(${
+      -90 + (360 / 12) * hour + (360 / 12 / 60) * min
+    }deg)`;
   }, 1000);
 })();
